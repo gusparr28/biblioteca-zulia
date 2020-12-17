@@ -1,0 +1,27 @@
+{
+  "name": "biblioteca-zulia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix app && npm run build --prefix app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusparr28/biblioteca-zulia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gusparr28/biblioteca-zulia/issues"
+  },
+  "homepage": "https://github.com/gusparr28/biblioteca-zulia#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.8"
+  }
+}
