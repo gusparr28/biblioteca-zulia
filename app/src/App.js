@@ -22,7 +22,7 @@ function App() {
   const crearUsuario = e => {
     e.preventDefault();
     if (id) {
-      fetch('http://localhost:3000/user/' + id, {
+      fetch('/user/' + id, {
         method: 'PUT',
         body: JSON.stringify({
           nombre,
@@ -58,7 +58,7 @@ function App() {
           mostrarUsuarios();
         });
     } else {
-      fetch('http://localhost:3000/user', {
+      fetch('/user', {
         method: 'POST',
         body: JSON.stringify({
           nombre,
@@ -96,7 +96,7 @@ function App() {
   };
 
   const mostrarUsuarios = () => {
-    fetch('http://localhost:3000/user')
+    fetch('/user')
       .then(res => res.json())
       .then(data => {
         setUsuarios(data.users);
@@ -104,7 +104,7 @@ function App() {
   };
 
   const eliminarUsuario = (id) => {
-    fetch('http://localhost:3000/user/' + id, {
+    fetch('/user/' + id, {
       method: 'DELETE',
       headers: {
         'Accept': 'application/json',
@@ -118,7 +118,7 @@ function App() {
   };
 
   const actualizarUsuario = (id) => {
-    fetch('http://localhost:3000/user/' + id)
+    fetch('/user/' + id)
       .then(res => res.json())
       .then(data => {
         setNombre(data.user.nombre);
@@ -137,7 +137,7 @@ function App() {
 
   const fetchUsers = (query) => {
     setSearch(query);
-    fetch("http://localhost:3000/searchUser", {
+    fetch("/searchUser", {
       method: "POST",
       headers: {
         'Accept': 'application/json',
